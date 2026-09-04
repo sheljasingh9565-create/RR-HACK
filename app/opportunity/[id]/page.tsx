@@ -2,6 +2,7 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { opportunities } from "@/data/opportunities";
 
 type Profile = {
@@ -16,6 +17,24 @@ type Profile = {
 
 export default function OpportunityPage() {
   const params = useParams();
+
+  const [profile, setProfile] = useState<Profile>({
+    name: "",
+    year: "",
+    branch: "",
+    college: "",
+    cgpa: "",
+    skills: "",
+    goal: "",
+  });
+
+  useEffect(() => {
+    const savedProfile = localStorage.getItem("opporaProfile");
+
+    if (savedProfile) {
+      setProfile(JSON.parse(savedProfile));
+    }
+  }, []);
 
   const opportunity = opportunities.find(
     (item) => item.id === String(params.id)
@@ -38,24 +57,6 @@ export default function OpportunityPage() {
         </div>
       </main>
     );
-  }
-
-  let profile: Profile = {
-    name: "",
-    year: "",
-    branch: "",
-    college: "",
-    cgpa: "",
-    skills: "",
-    goal: "",
-  };
-
-  if (typeof window !== "undefined") {
-    const savedProfile = localStorage.getItem("opporaProfile");
-
-    if (savedProfile) {
-      profile = JSON.parse(savedProfile);
-    }
   }
 
   const studentSkills = profile.skills

@@ -43,7 +43,7 @@ export const opportunities: Opportunity[] = [
 
     deadline: "Rolling",
 
-    officialUrl: "https://example.com",
+    officialUrl: "https://www.linkedin.com/jobs/",
 
     nextAction:
       "Build one practical software project and strengthen your Git workflow.",
@@ -71,7 +71,7 @@ export const opportunities: Opportunity[] = [
 
     deadline: "30 September 2026",
 
-    officialUrl: "https://example.com",
+    officialUrl: "https://devpost.com/hackathons",
 
     nextAction:
       "Practice problem solving and build a small project you can present.",
@@ -99,7 +99,7 @@ export const opportunities: Opportunity[] = [
 
     deadline: "15 October 2026",
 
-    officialUrl: "https://example.com",
+    officialUrl: "https://www.coursera.org/",
 
     nextAction:
       "Build a small research project and document your methodology.",
@@ -130,7 +130,7 @@ export const opportunities: Opportunity[] = [
 
     deadline: "10 October 2026",
 
-    officialUrl: "https://example.com",
+    officialUrl: "https://www.frontendmentor.io/",
 
     nextAction:
       "Build a responsive frontend project using HTML, CSS and JavaScript.",
@@ -161,7 +161,7 @@ export const opportunities: Opportunity[] = [
 
     deadline: "20 October 2026",
 
-    officialUrl: "https://example.com",
+    officialUrl: "https://www.linkedin.com/jobs/",
 
     nextAction:
       "Practice Python, SQL and Pandas through a small data analysis project.",
@@ -191,7 +191,7 @@ export const opportunities: Opportunity[] = [
 
     deadline: "5 November 2026",
 
-    officialUrl: "https://example.com",
+    officialUrl: "https://devpost.com/hackathons",
 
     nextAction:
       "Build a small machine learning project and learn how to present your solution.",
@@ -222,7 +222,7 @@ export const opportunities: Opportunity[] = [
 
     deadline: "Rolling",
 
-    officialUrl: "https://example.com",
+    officialUrl: "https://github.com/open-source",
 
     nextAction:
       "Create a GitHub profile and make your first meaningful open-source contribution.",
@@ -253,7 +253,7 @@ export const opportunities: Opportunity[] = [
 
     deadline: "1 December 2026",
 
-    officialUrl: "https://example.com",
+    officialUrl: "https://www.microsoft.com/en-us/research/academic-programs/",
 
     nextAction:
       "Build and document a machine learning project while strengthening your research skills.",

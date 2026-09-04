@@ -102,6 +102,7 @@ function calculateFit(
 
 export default function Dashboard() {
   const [profile, setProfile] = useState<Profile | null>(null);
+const [rankedOpportunities, setRankedOpportunities] = useState<any[]>([]);
 
   useEffect(() => {
     const savedProfile = localStorage.getItem("opporaProfile");
@@ -110,6 +111,26 @@ export default function Dashboard() {
       setProfile(JSON.parse(savedProfile));
     }
   }, []);
+
+  useEffect(() => {
+  if (!profile) return;
+
+  console.log("PROFILE SENT TO BACKEND:", profile);
+  fetch("http://127.0.0.1:8000/recommendations", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    
+    body: JSON.stringify(profile),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+  if (Array.isArray(data)) {
+    setRankedOpportunities(data);
+  }
+});
+}, [profile]);
 
   if (!profile) {
     return (
@@ -129,10 +150,6 @@ export default function Dashboard() {
       </main>
     );
   }
-
-  const rankedOpportunities = opportunities
-    .map((opportunity) => calculateFit(profile, opportunity))
-    .sort((a, b) => b.fit - a.fit);
 
   return (
     <main className="min-h-screen bg-[#F8F6F1] text-[#171717]">
